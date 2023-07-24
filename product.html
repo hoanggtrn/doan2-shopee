@@ -240,11 +240,11 @@
                 <div class="product-path">
                     <ul class="product-path-list">
                         <li class="product-path-item">
-                            <a class="product-path-link" href="">Shopee</a><i class="product-path-icon fa-solid fa-chevron-right"></i>
+                            <a class="product-path-link" href="/index.html">Shopee</a><i class="product-path-icon fa-solid fa-chevron-right"></i>
                         </li>
                         
                         <li class="product-path-item">
-                            <a class="product-path-link" href="">Máy Ảnh & Máy Quay Phim</a><i class="product-path-icon fa-solid fa-chevron-right"></i>
+                            <a class="product-path-link" href="/shop.html">Máy Ảnh & Máy Quay Phim</a><i class="product-path-icon fa-solid fa-chevron-right"></i>
                         </li>
                         <li class="product-path-item">
                             <a class="product-path-link" href="">Máy ảnh - Máy quay phim</a><i class="product-path-icon fa-solid fa-chevron-right"></i>
@@ -262,13 +262,13 @@
                                 <div class="product-image-preview">
                                     <div class="product-image-preview-top">
                                         <img class="product-image-preview-top-img" src="https://down-vn.img.susercontent.com/file/b85cecd1da8d985c969009c2c60321f0" alt="">
-                                        <img class="product-image-preview-top-img1" src="https://down-vn.img.susercontent.com/file/vn-50009109-d851329f3c4a8c69292bbb5fd791186b" alt="">
+                                        <!-- <img class="product-image-preview-top-img1" src="https://down-vn.img.susercontent.com/file/vn-50009109-d851329f3c4a8c69292bbb5fd791186b" alt=""> -->
                                     </div>
                                     <div class="product-image-preview-bottom">
-                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/b85cecd1da8d985c969009c2c60321f0_tn" alt="">
-                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/2e7be73cef259506f59e4af57b2f92c3_tn" alt="">
-                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/aaba81687348073a06707f5350642f8c_tn" alt="">
-                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/21a21e8f228754d10ad68aa8a00ff6ff_tn" alt="">
+                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/b85cecd1da8d985c969009c2c60321f0_tn" onmouseover="displayLargeImage(this)" alt="">
+                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/2e7be73cef259506f59e4af57b2f92c3_tn" onmouseover="displayLargeImage(this)" alt="">
+                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/aaba81687348073a06707f5350642f8c_tn" onmouseover="displayLargeImage(this)" alt="">
+                                        <img class="product-image-preview-bottom-img" src="https://down-vn.img.susercontent.com/file/21a21e8f228754d10ad68aa8a00ff6ff_tn" onmouseover="displayLargeImage(this)" alt="">
                                     </div>
                                 </div>
                                 <div class="product-likesrate">
@@ -340,16 +340,16 @@
                                     </div>
                                     <div class="product-contain-classify">
                                         <div class="product-contain-classify-lable">Phân Loại</div>
-                                        <button class="product-contain-classify-btn">Body</button>
-                                        <button class="product-contain-classify-btn">Kit RF 24-105</button>
+                                        <button class="product-contain-classify-btn" onclick="selectButton(this)">Body</button>
+                                        <button class="product-contain-classify-btn" onclick="selectButton(this)">Kit RF 24-105</button>
                                     </div>
                                     <div class="product-contain-classify-quantity">
                                         <div class="product-contain-classify-quantity-lable">Số Lượng</div>
-                                        <button class="product-contain-classify-quantity-btn">
+                                        <button class="product-contain-classify-quantity-btn" onclick="changeQuantity(-1)">
                                             <i class="product-contain-classify-quantity-btn-minus fa-solid fa-minus"></i>
                                         </button>
-                                        <input class="product-contain-classify-quantity-input" type="text">
-                                        <button class="product-contain-classify-quantity-btn">
+                                        <input class="product-contain-classify-quantity-input" type="text" value="1" id="quantityInput">
+                                        <button class="product-contain-classify-quantity-btn" onclick="changeQuantity(1)">
                                             <i class="product-contain-classify-quantity-btn-plus fa-solid fa-plus"></i>
                                         </button>
                                         <div class="product-contain-classify-quantity-remain">10 sản phẩm có sẵn</div>

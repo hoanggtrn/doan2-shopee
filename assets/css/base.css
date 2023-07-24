@@ -126,3 +126,40 @@ html{
 .sort-options-icon{
     margin-right: 10px;
 }
+
+/* pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item{
+    margin: 0 15px;
+}
+
+.pagination-item-active .pagination-item-link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.pagination-item-link{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #939393;
+    height: 30px;
+    min-width: 40px;
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+}
+
+.pagination-item-link:hover{
+    color: var(--primary-color);
+}
+
+.pagination-item-icon{
+
+}

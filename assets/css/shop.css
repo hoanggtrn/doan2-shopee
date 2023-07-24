@@ -399,6 +399,7 @@
     background-color: #ee4d2d;
     border-radius: 2px;
     text-decoration: none;
+    border: 0;
 }
 
 .search-btn:hover{
@@ -1009,6 +1010,13 @@
 }
 
 /* product */
+
+.no-results-message{
+    font-size: 2rem;
+    color: #555;
+    margin: auto;
+    padding: 60px 0 20px 0;
+}
 
 .home-product-item-link{
     text-decoration: none;

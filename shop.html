@@ -108,14 +108,14 @@
                             </a>
                         </div>
                         <div class="header-searchbar">
-                            <input class="header-search-input" type="text" placeholder="Đăng ký và nhận voucher bạn mới đến 70k!">
+                            <input class="header-search-input" id="searchInput" type="text" placeholder="Đăng ký và nhận voucher bạn mới đến 70k!">
                             <div class="header-search-history">
                                 <a href="" class="header-search-history-link">Búp bê bằng bông biết bay bay bay</a>
                                 <a href="" class="header-search-history-link">Một con vịt xòe ra hai cái cánh</a>
                             </div>
-                            <a class="search-btn" href="">
+                            <button class="search-btn" href="" onclick="searchProduct()">
                                 <i class="search-logo fa-solid fa-magnifying-glass fa-xl"></i>
-                            </a>
+                            </button>
                             <div class="hearder-suggest">
                                 <ul class="header-suggest-item">
                                     <li class="header-suggest-list">
@@ -215,13 +215,19 @@
                                         <a href="" class="category-item-link">Sản Phẩm</a>
                                     </li>
                                     <li class="category-item">
-                                        <a href="" class="category-item-link">Bán Chạy</a>
+                                        <a href="" class="category-item-link">Phụ kiện máy ảnh</a>
                                     </li>
                                     <li class="category-item">
                                         <a href="" class="category-item-link">Máy Ảnh</a>
                                     </li>
                                     <li class="category-item">
-                                        <a href="" class="category-item-link">Phụ Kiện</a>
+                                        <a href="" class="category-item-link">Tủ chống ẩm</a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="" class="category-item-link">Ống kính</a>
+                                    </li>
+                                    <li class="category-item">
+                                        <a href="" class="category-item-link">Gimbal</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -619,7 +625,8 @@
                                         </a>
                                         
                                     </div>
-                                    
+                                    <div class="no-results-message">Không tìm thấy sản phẩm phù hợp.</div>
+
                                 </div>
                             </div>
                             <ul class="pagination home-product-pagination">
@@ -1179,5 +1186,8 @@
             </div>
         </footer>
     </div>
+
+
+    <script src="/shop.js"></script>
 </body>
 </html>

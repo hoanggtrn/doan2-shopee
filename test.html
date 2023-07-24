@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Danh sách sản phẩm</title>
+    <title>Tìm kiếm sản phẩm</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Nhập tên sản phẩm..." oninput="handleSearchInput()">
+        <button onclick="searchProduct()">Tìm kiếm</button>
+    </div>
+
+    <div class="search-history">
+        <!-- Đây là nơi hiển thị lịch sử tìm kiếm -->
+    </div>
+
     <div class="product-list">
-        <div class="product-item" onclick="showProductDetails('Sản phẩm 1')">
-            Sản phẩm 1
+        <div class="home-product-item">
+            <div class="home-product-item-name">Sản phẩm 1</div>
         </div>
-        <div class="product-item" onclick="showProductDetails('Sản phẩm 2')">
-            Sản phẩm 2
+        <div class="home-product-item">
+            <div class="home-product-item-name">Sản phẩm 2</div>
         </div>
-        <div class="product-item" onclick="showProductDetails('Sản phẩm 3')">
-            Sản phẩm 3
+        <div class="home-product-item">
+            <div class="home-product-item-name">Sản phẩm 3</div>
         </div>
     </div>
 
-    <div class="product-details" id="productDetails">
-        <!-- Nội dung chi tiết sản phẩm sẽ được cập nhật tại đây -->
+    <div class="no-results-message" style="display: none;">
+        Không tìm thấy sản phẩm phù hợp.
     </div>
 
     <script src="test.js"></script>

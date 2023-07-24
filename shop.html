@@ -229,9 +229,9 @@
                         <div class="grid__column-10">
                             <div class="home-sortbar">
                                 <span class="home-sortbar_title">Sắp xếp theo</span>
-                                <button class="sort-btn sort-btn-primary">Phổ Biến</button>
-                                <button class="sort-btn">Mới Nhất</button>
-                                <button class="sort-btn">Bán Chạy</button>
+                                <button class="sort-btn sort-btn-primary" onclick="selectSortOption(this)">Phổ Biến</button>
+                                <button class="sort-btn" onclick="selectSortOption(this)">Mới Nhất</button>
+                                <button class="sort-btn" onclick="selectSortOption(this)">Bán Chạy</button>
                                 <div class="sort-options">
                                     <span class="sort-options-title">Giá</span>
                                     <i class="sort-options-icon fa-solid fa-angle-down fa-xl"></i>
@@ -245,7 +245,7 @@
                                 </div>
                                 <div class="home-page">
                                     <span class="home-page-page_num">
-                                        <span class="home-page-page_current">1</span>/14
+                                        <span class="home-page-page_current">1</span>/3
                                     </span>
                                     <div class="home-page-control">
                                         <button class="home-page-control-btn home-page-control-btn-backward home-page-control-disable">
@@ -260,7 +260,223 @@
                             <div class="home-product">
                                 <div class="grid__row">
                                     <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
+                                        <a class="home-product-item-link" href="/product.html" onclick="showProductDetails('product1')">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
+                                                    <div class="home-product-item-price">
+                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">20.590.000</span> -->
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">29.590.000</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 5</div>
+                                                    </div>
+                                                    <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <!-- <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">10%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product1.html">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(&quot;https://down-vn.img.susercontent.com/file/d35fb542631b7ffc9c50071c8b929d46_tn&quot;)"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">MÁY ẢNH CANON EOS RP KÈM NGÀM - NHỎ GỌN CHUYÊN NGHIỆP</span>
+                                                    <div class="home-product-item-price">
+                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">20.590.000</span> -->
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">20.200.000</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 0</div>
+                                                    </div>
+                                                    <!-- <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">10%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product2.html">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lje44ek5qxhoec_tn);"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">Máy ảnh CANON EOS M + Kit cũ</span>
+                                                    <div class="home-product-item-price">
+                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">20.590.000</span> -->
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">4.050.000</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
+                                                    </div>
+                                                    <!-- <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">10%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product3.html">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/51874d69bbf625d69f0e2c3d9e07d9ba);"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">Tủ chống ẩm 30 lít</span>
+                                                    <div class="home-product-item-price">
+                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">20.590.000</span> -->
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">949.000</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 246</div>
+                                                    </div>
+                                                    <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <!-- <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">10%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product4.html">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-23020-lvagkvycwanv6e);"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">Film máy ảnh Fuji 200 36 kiểu date 03.2025</span>
+                                                    <div class="home-product-item-price">
+                                                        <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">295.000</span>
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">280.000</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 3,5k</div>
+                                                    </div>
+                                                    <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">5%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product5.html">
+                                            <div class="home-product-item">
+                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134201-23030-bm2f0cgnsuov63);"></div>
+                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
+                                                <div class="home-product-item-info">
+                                                    <span class="home-product-item-name">Đầu đọc thẻ nhớ Micro Sd cổng usb, đầu lọc thẻ nhớ mini dùng cho máy tính, laptop, otg, loa đài cắm là nhận</span>
+                                                    <div class="home-product-item-price">
+                                                        <span class="home-product-item-price-old-icon">₫</span>
+                                                        <span class="home-product-item-price-old">8.000</span>
+                                                        <div class="home-product-item-price-current-box">
+                                                            <span class="home-product-item-price-current-icon">₫</span>
+                                                            <span class="home-product-item-price-current">3.876</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-product-item-soldinfo">
+                                                        <div class="home-product-item-rating">
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
+                                                        </div>
+                                                        <div class="home-product-item-soldcount">Đã bán 7,8k</div>
+                                                    </div>
+                                                    <div class="home-product-item-favorite">
+                                                        <span>Yêu thích</span></div>
+                                                    <div class="home-product-item-saleoff">
+                                                        <span class="home-product-item-saleoff-percent">52%</span>
+                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        
+                                    </div>
+                                    <div class="grid__column-2-4">
+                                        <a class="home-product-item-link" href="/product6.html">
                                             <div class="home-product-item">
                                                 <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
                                                 <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
@@ -296,7 +512,7 @@
                                         
                                     </div>
                                     <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
+                                        <a class="home-product-item-link" href="/product7.html">
                                             <div class="home-product-item">
                                                 <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
                                                 <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
@@ -332,7 +548,7 @@
                                         
                                     </div>
                                     <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
+                                        <a class="home-product-item-link" href="/product8.html">
                                             <div class="home-product-item">
                                                 <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
                                                 <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
@@ -368,223 +584,7 @@
                                         
                                     </div>
                                     <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
-                                            <div class="home-product-item">
-                                                <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
-                                                <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->
-                                                <div class="home-product-item-info">
-                                                    <span class="home-product-item-name">Máy ảnh Canon EOS RP (Body)- hàng chính hãng Lê Bảo Minh</span>
-                                                    <div class="home-product-item-price">
-                                                        <!-- <span class="home-product-item-price-old-icon">₫</span>
-                                                        <span class="home-product-item-price-old">20.590.000</span> -->
-                                                        <div class="home-product-item-price-current-box">
-                                                            <span class="home-product-item-price-current-icon">₫</span>
-                                                            <span class="home-product-item-price-current">29.590.000</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="home-product-item-soldinfo">
-                                                        <div class="home-product-item-rating">
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                            <i class="home-product-item-rating-icon fa-solid fa-star"></i>
-                                                        </div>
-                                                        <div class="home-product-item-soldcount">Đã bán 1</div>
-                                                    </div>
-                                                    <div class="home-product-item-favorite">
-                                                        <span>Yêu thích</span></div>
-                                                    <div class="home-product-item-saleoff">
-                                                        <span class="home-product-item-saleoff-percent">10%</span>
-                                                        <span class="home-product-item-saleoff-lable">GIẢM</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        
-                                    </div>
-                                    <div class="grid__column-2-4">
-                                        <a class="home-product-item-link" href="/product.html">
+                                        <a class="home-product-item-link" href="/product9.html">
                                             <div class="home-product-item">
                                                 <div class="home-product-item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn);"></div>
                                                 <!-- <img class="home-product-item-img" src="https://down-vn.img.susercontent.com/file/8808f23d33f856abafb8084dfeccc400_tn" alt=""> -->

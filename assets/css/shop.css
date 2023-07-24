@@ -1533,11 +1533,19 @@
 
 .product-path-item{
     font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    min-width: fit-content;
 }
 
 .product-path-item-current-name{
     font-size: 1.4rem;
     color: #444;
+    height: 1.5rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .product-path-link{
@@ -1629,6 +1637,7 @@
     /* display: block; */
     position: relative;
     color: var(--text-color);
+    line-height: 2.7rem;
 }
 
 /* soldcount */
@@ -1678,6 +1687,15 @@
     /* box-sizing: unset; */
     line-height: 120%;
     background-color: rgb(250 250 250);
+    display: flex;
+}
+
+.product-price-old{
+    font-size: 1.6rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
+
 }
 
 /* product-contain */
@@ -2132,10 +2150,16 @@
     cursor: pointer;
 }
 
-.product-feedback-rating-overview-filter-item-active{
+.selected {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
+    transition: ease-in 0.09s;
 }
+
+/* .product-feedback-rating-overview-filter-item-active{
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+} */
 
 .product-feedback-rating-overview-filter-item:hover{
     border: 1px solid var(--primary-color);

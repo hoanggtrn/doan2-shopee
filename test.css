@@ -1,0 +1,10 @@
+.sort-btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.sort-btn-primary {
+    background-color: #00aaff; /* Màu nền xanh cho button đã chọn */
+    color: #fff; /* Màu chữ trắng để làm nổi bật */
+}

@@ -21,6 +21,15 @@ function displayLargeImage(smallImage) {
 }
 
 
+// 
+let selectedSortBtn = document.querySelector('.sort-btn-primary');
+
+function selectSortOption(button) {
+    selectedSortBtn.classList.remove('sort-btn-primary');
+    button.classList.add('sort-btn-primary');
+    selectedSortBtn = button;
+}
+
 // số lượng sp
 function changeQuantity(change) {
     let quantityInput = document.getElementById('quantityInput');
@@ -34,9 +43,11 @@ function changeQuantity(change) {
 
 // btn selector
 function selectButton(button) {
-    const buttons = document.querySelectorAll('.product-contain-classify-btn');
+    const buttons = document.querySelectorAll('.product-feedback-rating-overview-filter-item');
     buttons.forEach((btn) => {
         btn.classList.remove('selected');
     });
     button.classList.add('selected');
 }
+
+

@@ -1884,6 +1884,12 @@
     transition: ease-in 0.09s;
 }
 
+.selected {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: ease-in 0.09s;
+}
+
 /* quantity */
 .product-contain-classify-quantity{
     padding: 4px 4px 15px 4px;
@@ -1923,6 +1929,8 @@
     width: 50px;
     padding: 4px 12px;
     margin: 0 -1px;
+    text-align: center;
+    font-size: 1.6rem;
 }
 
 .product-contain-classify-quantity-btn-plus{

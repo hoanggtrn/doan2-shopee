@@ -88,5 +88,74 @@ function searchProduct() {
     }
 }
 
+// price sort
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const productsContainer = document.getElementById("home-product");
+    const products = Array.from(productsContainer.getElementsByClassName("grid__column-2-4"));
+
+    function sortProductsByPrice(order) {
+      products.sort(function (a, b) {
+        const priceA = parseFloat(a.querySelector(".home-product-item-price-current").innerText.replace(/\D/g, ''));
+        const priceB = parseFloat(b.querySelector(".home-product-item-price-current").innerText.replace(/\D/g, ''));
+
+        return order === "desc" ? priceB - priceA : priceA - priceB;
+      });
+
+      products.forEach(function (product) {
+        productsContainer.appendChild(product);
+      });
+    }
+
+    document.querySelectorAll(".sort-option-link").forEach(function (sortLink) {
+      sortLink.addEventListener("click", function (event) {
+        event.preventDefault();
+        const order = sortLink.getAttribute("data-sort");
+        sortProductsByPrice(order);
+      });
+    });
+  });
+
+// thêm vào giỏ
+document.addEventListener("DOMContentLoaded", function () {
+    const addToCartBtn = document.querySelector(".product-contain-puttocart");
+    addToCartBtn.addEventListener("click", addToCart);
+    updateEmptyCartMessage();
+  });
+  
+  function addToCart() {
+    // Lấy thông tin sản phẩm từ trang hiện tại
+    const productImage = document.querySelector(".product-image-preview-top-img").getAttribute("src");
+    const productName = document.querySelector(".product-info-name").innerText;
+    const productPrice = document.querySelector(".product-price").innerText;
+  
+    // Hiển thị thông báo thêm vào giỏ hàng thành công
+    alert("Đã thêm vào giỏ hàng thành công!");
+  
+    // Thêm mục sản phẩm vào giỏ hàng
+    const cartList = document.querySelector(".header-cart-list-has-cart");
+    const cartItem = document.createElement("li");
+    cartItem.classList.add("header-cart-list-item");
+  
+    cartItem.innerHTML = `
+      <img class="header-cart-list-item-img" src="${productImage}" alt="">
+      <div class="header-cart-list-item-info">
+        <span class="header-cart-list-item-name">${productName}</span>
+        <span class="header-cart-list-item-price">${productPrice}</span>
+      </div>
+    `;
+  
+    cartList.appendChild(cartItem);
+    updateEmptyCartMessage();
+  }
+  
+//   function updateEmptyCartMessage() {
+//     const emptyCartMessage = document.querySelector(".header-cart-list");
+//     const cartList = document.querySelector(".header-cart-list-has-cart");
+//     if (cartList.children.length > 0) {
+//       emptyCartMessage.style.display = "none";
+//     } else {
+//       emptyCartMessage.style.display = "block";
+//     }
+//   }
 

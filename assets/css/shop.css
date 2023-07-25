@@ -572,6 +572,7 @@
     margin-left: auto;
     padding-left: 20px;
     color: var(--primary-color);
+    text-align: end;
 }
 
 .header-cart-btn{

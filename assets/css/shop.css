@@ -1017,6 +1017,7 @@
     color: #555;
     margin: auto;
     padding: 60px 0 20px 0;
+    /* display: none; */
 }
 
 .home-product-item-link{

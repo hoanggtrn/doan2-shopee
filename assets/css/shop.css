@@ -749,6 +749,10 @@
     transition: ease-in 0.15s;
 }
 
+.contain-section-item-top-active{
+    animation: breathe infinite linear 3s ;
+}
+
 .contain-section-header-content{
 
 }

@@ -105,6 +105,18 @@ html{
     }
 }
 
+@keyframes breathe{
+    0%{
+        box-shadow: 0 0 10px 1px rgba(164, 164, 164, 0.217);
+    }
+    50%{
+        box-shadow: 0 0 5px 5px rgba(243, 75, 75, 0.233);
+    }
+    100%{
+        box-shadow: 0 0 10px 1px rgba(164, 164, 164, 0.217);
+    }
+}
+
 /* selection */
 .sort-options{
     min-width: 200px;

@@ -1,24 +1,3 @@
-// // xử lý sản phẩm dùng chung 1 trang product
-$(document).ready(function() {
-    // Xử lý khi trang product.html được tải
-    if (window.location.href.includes("/product/product.html")) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const productId = urlParams.get("id");
-
-        // Sử dụng AJAX để tải nội dung sản phẩm tương ứng và hiển thị vào #product-container
-        $.ajax({
-            url: `../product/product${productId}.html`,
-            success: function(data) {
-                $("#product-container").html(data);
-            }
-        });
-
-        // Tải và hiển thị header và footer chung
-        $("#header").load("/base/header.html");
-        $("#footer").load("/base/footer.html");
-    }
-
-});
 
 $(function() {
     $("#header").load("/base/header.html");

@@ -1,7 +1,7 @@
 // // xử lý sản phẩm dùng chung 1 trang product
 $(document).ready(function() {
     // Xử lý khi trang product.html được tải
-    if (window.location.href.includes("../product/product.html")) {
+    if (window.location.href.includes("/product/product.html")) {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get("id");
 

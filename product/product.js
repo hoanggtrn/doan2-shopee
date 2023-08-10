@@ -14,8 +14,8 @@ $(document).ready(function() {
         });
 
         // Tải và hiển thị header và footer chung
-        $("#header").load("../base/header.html");
-        $("#footer").load("../base/footer.html");
+        $("#header").load("/base/header.html");
+        $("#footer").load("/base/footer.html");
     }
 
 });

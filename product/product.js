@@ -20,6 +20,11 @@ $(document).ready(function() {
 
 });
 
+$(function() {
+    $("#header").load("/base/header.html");
+    $("#footer").load("/base/footer.html");
+});
+
 
 // btn selector
 function selectButton(button) {

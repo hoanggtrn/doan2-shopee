@@ -1,41 +1,53 @@
 
+
+
 // // search
-// function handleKeyPress(event) {
-//     if (event.keyCode === 13) {
-//         // Nếu phím người dùng nhấn là "Enter" (mã ASCII là 13), thực hiện tìm kiếm sản phẩm
-//         searchProduct();
-//     }
-// }
+function removeDiacritics(text) {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
 
-// function removeDiacritics(text) {
-//     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-// }
+function handleSearchInput() {
+  let input = document.getElementById('searchInput');
+  input.value = removeDiacritics(input.value); // Remove diacritics from the input text
+  searchProduct();
+}
 
-// function handleSearchInput() {
-//     let input = document.getElementById('searchInput');
-//     input.value = removeDiacritics(input.value); // Remove diacritics from the input text
-//     searchProduct();
-//     let noResultsMessage = document.querySelector('.no-results-message');
-// }
+function searchProduct() {
+  let input = document.getElementById('searchInput');
+  let filter = input.value.toUpperCase();
+  let productLinks = document.querySelectorAll('.home-product-item-link'); // Select the <a> tags instead of <div>
+  let noResultsMessage = document.querySelector('.no-results-message');
 
-// function searchProduct() {
-//     let input = document.getElementById('searchInput');
-//     let filter = input.value.toUpperCase();
-//     let productItems = document.querySelectorAll('.grid__column-2-4');
-//     let noResultsMessage = document.querySelector('.no-results-message');
+  let foundResults = false; // Add a variable to track if any results are found
 
-//     for (let i = 0; i < productItems.length; i++) {
-//         let productName = productItems[i].querySelector('.home-product-item-name').innerText;
-//         productName = removeDiacritics(productName); // Remove diacritics from the product name
-//         if (productName.toUpperCase().indexOf(filter) > -1) {
-//             productItems[i].style.display = ''; // Show products that match the search
-//             noResultsMessage.style.display = 'none'; // Ẩn thông báo "Không tìm thấy sản phẩm"
-//         } else {
-//             productItems[i].style.display = 'none'; // Hide products that don't match the search
-//             noResultsMessage.style.display = ''; // Hiển thị thông báo "Không tìm thấy sản phẩm"
-//         }
-//     }
-// }
+  for (let i = 0; i < productLinks.length; i++) {
+      let productName = productLinks[i].querySelector('.home-product-item-name').innerText;
+      productName = removeDiacritics(productName); // Remove diacritics from the product name
+      if (productName.toUpperCase().indexOf(filter) > -1) {
+          productLinks[i].style.display = ''; // Show products that match the search
+          foundResults = true; // Set the flag to true if a result is found
+      } else {
+          productLinks[i].style.display = 'none'; // Hide products that don't match the search
+      }
+  }
+
+  // Update the display of the noResultsMessage based on the foundResults flag
+  if (foundResults) {
+      noResultsMessage.style.display = 'none'; // Hide no results message if results are found
+  } else {
+      noResultsMessage.style.display = ''; // Show no results message if no results are found
+  }
+}
+
+function handleSearchInput(event) {
+  if (event.key === "Enter") {
+      let input = document.getElementById('searchInput');
+      input.value = removeDiacritics(input.value); // Remove diacritics from the input text
+      searchProduct();
+  }
+}
+
+
 
 // danh mục
 $(document).ready(function() {

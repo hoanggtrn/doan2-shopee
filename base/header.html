@@ -40,8 +40,8 @@
                                 <span class="notify-text">Đăng nhập để xem thông báo</span>
                             </div>
                             <footer class="footer-notify">
-                                <a class="btn-link" href="">Đăng Ký</a>  
-                                <a class="btn-link" href="">Đăng Nhập</a>   
+                                <a class="btn-link" href="https://about-shopee.netlify.app/">Đăng Ký</a>  
+                                <a class="btn-link" href="https://about-shopee.netlify.app/">Đăng Nhập</a>   
                             </footer>
                         </div>
                     </li>
@@ -90,12 +90,12 @@
                     </a>
                 </div>
                 <div class="header-searchbar">
-                    <input class="header-search-input" type="text" placeholder="Đăng ký và nhận voucher bạn mới đến 70k!">
+                    <input class="header-search-input" id="searchInput" onkeypress="handleSearchInput(event)" type="text" placeholder="Đăng ký và nhận voucher bạn mới đến 70k!">
                     <div class="header-search-history">
                         <a href="" class="header-search-history-link">Búp bê bằng bông biết bay bay bay</a>
                         <a href="" class="header-search-history-link">Một con vịt xòe ra hai cái cánh</a>
                     </div>
-                    <button class="search-btn">
+                    <button class="search-btn" onclick="handleSearchInput()" >
                         <i class="search-logo fa-solid fa-magnifying-glass fa-xl"></i>
                     </button>
                     <div class="hearder-suggest">

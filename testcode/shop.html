@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cửa hàng</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Tìm kiếm sản phẩm</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".search-btn").click(function() {
+        var keyword = $(".header-search-input").val().trim().toLowerCase();
+        
+        $(".home-product-item-name").each(function() {
+          var productName = $(this).text().toLowerCase();
+          
+          if (productName.includes(keyword)) {
+            $(this).closest(".home-product-item").show();
+          } else {
+            $(this).closest(".home-product-item").hide();
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-    <div class="products">
-        <a href="product.html" class="home-product-item-link">
-            <div class="home-product-item-name">Sản phẩm 1</div>
-        </a>
-        <a href="product.html" class="home-product-item-link">
-            <div class="home-product-item-name">Sản phẩm 2</div>
-        </a>
-        <a href="product.html" class="home-product-item-link">
-            <div class="home-product-item-name">Sản phẩm 3</div>
-        </a>
-        <!-- Thêm các sản phẩm khác -->
+  <input type="text" class="header-search-input" placeholder="Nhập từ khóa tìm kiếm">
+  <button class="search-btn">Tìm kiếm</button>
+  
+  <div class="a">
+    <div class="home-product-item">
+      <div class="home-product-item-name">Sản phẩm A</div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <div class="home-product-item">
+      <div class="home-product-item-name">Sản phẩm B</div>
+    </div>
+    <div class="home-product-item">
+      <div class="home-product-item-name">Sản phẩm C</div>
+    </div>
+  </div>
 </body>
 </html>

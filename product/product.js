@@ -1,4 +1,4 @@
-
+// load header và footer
 $(function() {
     $("#header").load("/base/header.html");
     $("#footer").load("/base/footer.html");
@@ -45,3 +45,20 @@ function displayLargeImage(smallImage) {
 }
 
 
+// Lắng nghe sự kiện click trên nút "Thêm vào giỏ hàng"
+document.querySelector('.product-contain-puttocart').addEventListener('click', function() {
+    setTimeout(function() {
+        showSuccessMessage();
+    }, 300); // Thời gian trễ 0.5 giây (500ms)
+});
+
+// Hàm hiển thị thông báo thành công và tự động ẩn sau một khoảng thời gian
+function showSuccessMessage() {
+    let successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+
+    // Tự động ẩn thông báo sau 2 giây (2000ms)
+    setTimeout(function() {
+        successMessage.style.display = 'none';
+    }, 3000);
+}

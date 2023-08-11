@@ -41,10 +41,14 @@ function searchProduct() {
 
 function handleSearchInput(event) {
   if (event.key === "Enter") {
-      let input = document.getElementById('searchInput');
-      input.value = removeDiacritics(input.value); // Remove diacritics from the input text
-      searchProduct();
+      performSearch();
   }
+}
+
+function performSearch() {
+  let input = document.getElementById('searchInput');
+  input.value = removeDiacritics(input.value); // Remove diacritics from the input text
+  searchProduct();
 }
 
 

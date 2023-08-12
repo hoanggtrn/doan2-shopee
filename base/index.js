@@ -31,7 +31,7 @@ prevBtn.addEventListener('click', () => {
 
 function updateSliderPosition() {
     const newPosition = -currentIndex * sliderWidth;
-    slider.style.transition = 'transform 0.3s ease-in-out';
+    slider.style.transition = 'transform 0.5s ease-out';
     slider.style.transform = `translateX(${newPosition}px)`;
 
     // Sử dụng sự kiện transitionend để loại bỏ transition sau khi hoàn thành

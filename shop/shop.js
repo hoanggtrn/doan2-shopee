@@ -1,9 +1,3 @@
-
-
-
-////////////////////////// thêm vào giỏ //////////////////////////
-
-
 ////////////////////////// history //////////////////////////
 function handleKeyPress(event) {
   if (event.keyCode === 13) {
@@ -32,10 +26,11 @@ function saveSearchKeyword() {
   }
 }
 
-// function performSearch() {
-//   saveSearchKeyword(); // Lưu từ khóa tìm kiếm trước khi thực hiện tìm kiếm
-//   // Thực hiện tìm kiếm hoặc chuyển hướng tới trang kết quả tìm kiếm
-// }
+function performSearch() {
+  saveSearchKeyword(); // Lưu từ khóa tìm kiếm trước khi thực hiện tìm kiếm
+  // Thực hiện tìm kiếm hoặc chuyển hướng tới trang kết quả tìm kiếm
+}
+
 
 ////////////////////////// search //////////////////////////
 function removeDiacritics(text) {
@@ -89,7 +84,6 @@ function performSearch() {
 }
 
 
-
 ////////////////////////// lọc giá //////////////////////////
 // Lấy danh sách các sản phẩm
 let products = Array.from(document.querySelectorAll('.home-product-item-link'));
@@ -134,10 +128,6 @@ function sortProductsByPrice(ascending) {
 }
 
 
-
-
-
-
 ////////////////////////// danh mục //////////////////////////
 $(document).ready(function() {
   const allProducts = $(".home-product-item-link"); // Lưu tất cả sản phẩm
@@ -161,24 +151,6 @@ $(document).ready(function() {
   });
 });
 
-
-// title
-const nameElements = document.querySelectorAll('.product-info-name');
-const dynamicTitle = nameElements[0].textContent;
-const cleanedTitle = dynamicTitle.replace('name', '');
-document.title = cleanedTitle;
-
-
-
-
-// sort options
-let selectedSortBtn = document.querySelector('.sort-btn');
-
-function selectSortOption(button) {
-    selectedSortBtn.classList.remove('sort-btn');
-    button.classList.add('sort-btn');
-    selectedSortBtn = button;
-}
 
 
 

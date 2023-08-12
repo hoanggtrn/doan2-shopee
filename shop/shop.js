@@ -120,6 +120,55 @@ function performSearch() {
   // Thực hiện tìm kiếm hoặc chuyển hướng tới trang kết quả tìm kiếm
 }
 
+
+// lọc giá
+// Lấy danh sách các sản phẩm
+let products = Array.from(document.querySelectorAll('.home-product-item-link'));
+
+// Sắp xếp theo giá từ thấp đến cao
+document.querySelector('.sort-option-link-upto').addEventListener('click', function(event) {
+    event.preventDefault();
+    sortProductsByPrice(true);
+});
+
+// Sắp xếp theo giá từ cao xuống thấp
+document.querySelector('.sort-option-link-downto').addEventListener('click', function(event) {
+    event.preventDefault();
+    sortProductsByPrice(false);
+});
+
+function sortProductsByPrice(ascending) {
+  // Sắp xếp các sản phẩm theo giá
+  products.sort(function(a, b) {
+      let priceA = parseFloat(a.querySelector('.home-product-item-price-current').innerText.replace('₫', '').replace(/\./g, ''));
+      let priceB = parseFloat(b.querySelector('.home-product-item-price-current').innerText.replace('₫', '').replace(/\./g, ''));
+
+      if (ascending) {
+          return priceA - priceB;
+      } else {
+          return priceB - priceA;
+      }
+  });
+
+  // Lấy thẻ cha của danh sách sản phẩm
+  let productContainer = document.querySelector('.home-product');
+
+  // Thêm thuộc tính flex-wrap và flex để xếp trong một hàng và tự động xuống dòng
+  productContainer.style.display = 'flex';
+  productContainer.style.flexWrap = 'wrap';
+
+  // Sắp xếp lại các sản phẩm và thêm thuộc tính flex cho mỗi sản phẩm
+  products.forEach(function(product) {
+      productContainer.appendChild(product.parentElement); // Sử dụng parentElement để đảm bảo thêm lại vào thẻ cha chính xác
+      product.parentElement.style.display = 'flex'; // Thêm thuộc tính flex cho sản phẩm
+  });
+}
+
+
+
+
+
+
 // danh mục
 $(document).ready(function() {
   const allProducts = $(".home-product-item-link"); // Lưu tất cả sản phẩm

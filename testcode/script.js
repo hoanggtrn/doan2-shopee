@@ -1,30 +1,36 @@
-document.getElementById('searchButton').addEventListener('click', function() {
-    saveSearchKeyword();
+// Lấy danh sách các sản phẩm
+let productContainer = document.querySelector('.product-list');
+let products = Array.from(productContainer.querySelectorAll('.home-product-item-link'));
+
+// Sắp xếp theo giá từ thấp đến cao
+document.querySelector('.sort-option-link-upto').addEventListener('click', function() {
+    sortProductsByPrice(true);
 });
 
-function saveSearchKeyword() {
-    let searchInput = document.getElementById('searchInput');
-    let keyword = searchInput.value.trim(); // Lấy giá trị từ khóa tìm kiếm và loại bỏ khoảng trắng
+// Sắp xếp theo giá từ cao xuống thấp
+document.querySelector('.sort-option-link-downto').addEventListener('click', function() {
+    sortProductsByPrice(false);
+});
 
-    if (keyword !== '') {
-        // Tạo phần tử <a> mới cho từ khóa tìm kiếm và thêm vào danh sách
-        let historyContainer = document.querySelector('.header-search-history');
-        let linkItem = document.createElement('a');
-        linkItem.className = 'header-search-history-link';
-        linkItem.textContent = keyword;
-        linkItem.href = '#'; // Có thể thay đổi href theo yêu cầu
+function sortProductsByPrice(ascending) {
+    products.sort(function(a, b) {
+        let priceA = parseFloat(a.querySelector('.home-product-item-price-current').innerText.replace('₫', '').replace(/\./g, ''));
+        let priceB = parseFloat(b.querySelector('.home-product-item-price-current').innerText.replace('₫', '').replace(/\./g, ''));
 
-        // Thêm sự kiện click để tái sử dụng từ khóa tìm kiếm khi nhấn vào
-        linkItem.addEventListener('click', function() {
-            searchInput.value = keyword;
-        });
+        if (ascending) {
+            return priceA - priceB;
+        } else {
+            return priceB - priceA;
+        }
+    });
 
-        historyContainer.appendChild(linkItem);
-
-        // Xóa giá trị trong ô nhập liệu
-        searchInput.value = '';
-
-        // Lưu từ khóa tìm kiếm vào local storage hoặc cookie để duy trì sau khi tải lại trang
-        // Ví dụ: localStorage.setItem('searchHistory', JSON.stringify([...historyContainer.children].map(item => item.textContent)));
+    // Xóa tất cả sản phẩm hiện có trong danh sách
+    while (productContainer.firstChild) {
+        productContainer.removeChild(productContainer.firstChild);
     }
+
+    // Thêm lại các sản phẩm theo thứ tự đã sắp xếp
+    products.forEach(function(product) {
+        productContainer.appendChild(product);
+    });
 }

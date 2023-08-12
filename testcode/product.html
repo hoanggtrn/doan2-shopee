@@ -3,14 +3,61 @@
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .header-search-history {
+    display: flex;
+    flex-direction: column; /* Hiển thị các phần tử theo cột */
+    align-items: flex-start; /* Canh lề trái cho các phần tử */
+}
+.header-search-history-link {
+    display: block;
+    margin: 5px 0; /* Khoảng cách giữa các từ khóa */
+}
+    </style>
 </head>
 <body>
-    <div class="product-info">
-        <div class="product-info-name">Sản phẩm 1</div>
-        <!-- Các thông tin khác về sản phẩm -->
+    <input class="header-search-input" id="searchInput" onkeypress="handleKeyPress(event)" type="text" placeholder="Đăng ký và nhận voucher bạn mới đến 70k!">
+    <div class="header-search-history">
+        <!-- Các thẻ <a> sẽ được thêm ở đây -->
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <button class="search-btn" onclick="performSearch()">
+        <i class="search-logo fa-solid fa-magnifying-glass fa-xl"></i>
+    </button>
+    
+    <script>
+    function handleKeyPress(event) {
+        if (event.keyCode === 13) {
+            saveSearchKeyword();
+        }
+    }
+    
+    function saveSearchKeyword() {
+        let searchInput = document.getElementById('searchInput');
+        let keyword = searchInput.value.trim();
+    
+        if (keyword !== '') {
+            let historyContainer = document.querySelector('.header-search-history');
+            let linkItem = document.createElement('a');
+            linkItem.className = 'header-search-history-link';
+            linkItem.textContent = keyword;
+            linkItem.href = '#';
+    
+            linkItem.addEventListener('click', function() {
+                searchInput.value = keyword;
+            });
+    
+            historyContainer.appendChild(linkItem);
+    
+            searchInput.value = '';
+        }
+    }
+    
+    function performSearch() {
+        saveSearchKeyword(); // Lưu từ khóa tìm kiếm trước khi thực hiện tìm kiếm
+        // Thực hiện tìm kiếm hoặc chuyển hướng tới trang kết quả tìm kiếm
+    }
+    </script>
+    
+<!-- <script src="/testcode/script.js"></script> -->
 </body>
 </html>

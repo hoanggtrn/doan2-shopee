@@ -1,6 +1,42 @@
 
 
 
+// thêm vào giỏ
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.product-contain-puttocart').addEventListener('click', function() {
+      addToCart();
+  });
+
+  function addToCart() {
+      // Lấy thông tin sản phẩm
+      let productName = document.querySelector('.header-cart-list-item-name').innerText;
+      let productImageSrc = document.querySelector('.header-cart-list-item-img').getAttribute('src');
+      let productPrice = document.querySelector('.header-cart-list-item-price').innerText;
+
+      // Cập nhật thông tin sản phẩm vào giỏ hàng
+      let hasCart = document.querySelector('.header-cart-has-cart');
+      let cartList = hasCart.querySelector('.header-cart-list-has-cart');
+
+      let cartItem = document.createElement('li');
+      cartItem.className = 'header-cart-list-item';
+
+      cartItem.innerHTML = `
+          <img class="header-cart-list-item-img" src="${productImageSrc}" alt="">
+          <div class="header-cart-list-item-info">
+              <span class="header-cart-list-item-name">${productName}</span>
+              <span class="header-cart-list-item-price">${productPrice}</span>
+          </div>
+      `;
+
+      cartList.appendChild(cartItem);
+
+      // Hiển thị giỏ hàng khi đã có sản phẩm
+      let emptyCart = document.querySelector('.header-cart-empty');
+      emptyCart.style.display = 'none';
+      hasCart.style.display = 'block';
+  }
+});
+
 // // search
 function removeDiacritics(text) {
   return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -51,7 +87,38 @@ function performSearch() {
   searchProduct();
 }
 
+// history
+function handleKeyPress(event) {
+  if (event.keyCode === 13) {
+      saveSearchKeyword();
+  }
+}
 
+function saveSearchKeyword() {
+  let searchInput = document.getElementById('searchInput');
+  let keyword = searchInput.value.trim();
+
+  if (keyword !== '') {
+      let historyContainer = document.querySelector('.header-search-history');
+      let linkItem = document.createElement('a');
+      linkItem.className = 'header-search-history-link';
+      linkItem.textContent = keyword;
+      linkItem.href = '#';
+
+      linkItem.addEventListener('click', function() {
+          searchInput.value = keyword;
+      });
+
+      historyContainer.appendChild(linkItem);
+
+      searchInput.value = '';
+  }
+}
+
+function performSearch() {
+  saveSearchKeyword(); // Lưu từ khóa tìm kiếm trước khi thực hiện tìm kiếm
+  // Thực hiện tìm kiếm hoặc chuyển hướng tới trang kết quả tìm kiếm
+}
 
 // danh mục
 $(document).ready(function() {
@@ -128,48 +195,7 @@ function selectSortOption(button) {
     });
   });
 
-// thêm vào giỏ
-document.addEventListener("DOMContentLoaded", function () {
-    const addToCartBtn = document.querySelector(".product-contain-puttocart");
-    addToCartBtn.addEventListener("click", addToCart);
-    updateEmptyCartMessage();
-  });
-  
-  function addToCart() {
-    // Lấy thông tin sản phẩm từ trang hiện tại
-    const productImage = document.querySelector(".product-image-preview-top-img").getAttribute("src");
-    const productName = document.querySelector(".product-info-name").innerText;
-    const productPrice = document.querySelector(".product-price").innerText;
-  
-    // Hiển thị thông báo thêm vào giỏ hàng thành công
-    alert("Đã thêm vào giỏ hàng thành công!");
-  
-    // Thêm mục sản phẩm vào giỏ hàng
-    const cartList = document.querySelector(".header-cart-list-has-cart");
-    const cartItem = document.createElement("li");
-    cartItem.classList.add("header-cart-list-item");
-  
-    cartItem.innerHTML = `
-      <img class="header-cart-list-item-img" src="${productImage}" alt="">
-      <div class="header-cart-list-item-info">
-        <span class="header-cart-list-item-name">${productName}</span>
-        <span class="header-cart-list-item-price">${productPrice}</span>
-      </div>
-    `;
-  
-    cartList.appendChild(cartItem);
-    updateEmptyCartMessage();
-  }
-  
-//   function updateEmptyCartMessage() {
-//     const emptyCartMessage = document.querySelector(".header-cart-list");
-//     const cartList = document.querySelector(".header-cart-list-has-cart");
-//     if (cartList.children.length > 0) {
-//       emptyCartMessage.style.display = "none";
-//     } else {
-//       emptyCartMessage.style.display = "block";
-//     }
-//   }
+
 
 
   

@@ -2046,8 +2046,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 50%;
-    transform: translateY(-63%);
+    padding-top: 15%;
+    
 }
 
 .success-message-img{

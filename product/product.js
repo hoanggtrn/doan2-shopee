@@ -57,6 +57,10 @@ function displayLargeImage(smallImage) {
 
 ////////////////////////// Lắng nghe sự kiện click trên nút "Thêm vào giỏ hàng" //////////////////////////
 document.querySelector('.product-contain-puttocart').addEventListener('click', function() {
+    // Lấy giá trị số lượng từ thanh điều chỉnh
+    const quantityInput = document.getElementById('quantityInput');
+    const selectedQuantity = parseInt(quantityInput.value);
+
     // Ẩn khối header-cart-empty và hiển thị khối header-cart-has-cart
     document.querySelector('.header-cart-empty').style.display = 'none';
     document.querySelector('.header-cart-has-cart').style.display = 'block';
@@ -71,7 +75,7 @@ document.querySelector('.product-contain-puttocart').addEventListener('click', f
         // Sản phẩm đã tồn tại trong giỏ hàng, cập nhật số lượng hoặc thay đổi thông tin khác
         const quantityElement = existingCartItem.parentElement.querySelector('.header-cart-list-item-quantity');
         const currentQuantity = parseInt(quantityElement.dataset.quantity);
-        const newQuantity = currentQuantity + 1;
+        const newQuantity = currentQuantity + selectedQuantity;
         quantityElement.dataset.quantity = newQuantity;
         quantityElement.textContent = `x${newQuantity}`;
     } else {
@@ -84,7 +88,7 @@ document.querySelector('.product-contain-puttocart').addEventListener('click', f
             <div class="header-cart-list-item-info">
                 <span class="header-cart-list-item-name">${productName}</span>
                 <span class="header-cart-list-item-price">${productPrice}</span>
-                <span class="header-cart-list-item-quantity" data-quantity="1">x1</span>
+                <span class="header-cart-list-item-quantity" data-quantity="${selectedQuantity}">x${selectedQuantity}</span>
             </div>
         `;
 
@@ -93,15 +97,15 @@ document.querySelector('.product-contain-puttocart').addEventListener('click', f
         // Thêm phần tử mới vào danh sách giỏ hàng
         const cartList = document.querySelector('.header-cart-list-has-cart');
         cartList.appendChild(newCartItem);
-            }
+    }
 
-        // Cập nhật số lượng trong badge
-        const cartItemCount = document.querySelectorAll('.header-cart-list-item').length;
-        updateCartBadge(cartItemCount);
+    // Cập nhật số lượng trong badge
+    const cartItemCount = document.querySelectorAll('.header-cart-list-item').length;
+    updateCartBadge(cartItemCount);
 
-        setTimeout(function() {
-            showSuccessMessage();
-        }, 250);
+    setTimeout(function() {
+        showSuccessMessage();
+    }, 250);
 });
 
 // Hàm cập nhật số lượng trong badge

@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Example</title>
 </head>
+<style>
+    .header-cart-has-cart{
+        display: none;
+    }
+</style>
 <body>
-    <a href="#" class="sort-option-link-upto">Sắp xếp giá từ thấp đến cao</a>
-<a href="#" class="sort-option-link-downto">Sắp xếp giá từ cao xuống thấp</a>
+    <!-- Các phần tử trang web -->
+    <div class="header-cart-list">
+        <div class="header-cart-empty">Không có hàng</div>
+        <div class="header-cart-has-cart">Có hàng</div>
+    </div>
+    <button class="product-contain-puttocart-text">Thêm vào giỏ hàng</button>
 
-<div class="product-list">
-    <!-- Các thẻ sản phẩm sẽ được thêm ở đây -->
-</div>
+    <!-- Đoạn mã JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const addButton = document.querySelector(".product-contain-puttocart-text");
+            const emptyCart = document.querySelector(".header-cart-empty");
+            const hasCart = document.querySelector(".header-cart-has-cart");
 
-    
-<script src="/testcode/script.js"></script>
+            addButton.addEventListener("click", function() {
+                emptyCart.style.display = "none";
+                hasCart.style.display = "block";
+            });
+        });
+    </script>
 </body>
 </html>

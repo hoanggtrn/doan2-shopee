@@ -2,40 +2,7 @@
 
 
 ////////////////////////// thêm vào giỏ //////////////////////////
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.product-contain-puttocart').addEventListener('click', function() {
-    addToCart();
-  });
-  
-  function addToCart() {
-      // Lấy thông tin sản phẩm
-      let productName = document.querySelector('.header-cart-list-item-name').innerText;
-      let productImageSrc = document.querySelector('.header-cart-list-item-img').getAttribute('src');
-      let productPrice = document.querySelector('.header-cart-list-item-price').innerText;
 
-      // Cập nhật thông tin sản phẩm vào giỏ hàng
-      let hasCart = document.querySelector('.header-cart-has-cart');
-      let cartList = hasCart.querySelector('.header-cart-list-has-cart');
-
-      let cartItem = document.createElement('li');
-      cartItem.className = 'header-cart-list-item';
-      
-      cartItem.innerHTML = `
-      <img class="header-cart-list-item-img" src="${productImageSrc}" alt="">
-      <div class="header-cart-list-item-info">
-              <span class="header-cart-list-item-name">${productName}</span>
-              <span class="header-cart-list-item-price">${productPrice}</span>
-              </div>
-      `;
-
-      cartList.appendChild(cartItem);
-
-      // Hiển thị giỏ hàng khi đã có sản phẩm
-      let emptyCart = document.querySelector('.header-cart-empty');
-      emptyCart.style.display = 'none';
-      hasCart.style.display = 'block';
-  }
-});
 
 ////////////////////////// history //////////////////////////
 function handleKeyPress(event) {

@@ -1,11 +1,11 @@
-// load header và footer
+////////////////////////// load header và footer //////////////////////////
 $(function() {
     $("#header").load("/base/header.html");
     $("#footer").load("/base/footer.html");
 });
 
 
-// btn selector
+////////////////////////// btn selector //////////////////////////
 function selectButton(button) {
     const buttons = document.querySelectorAll('.product-feedback-rating-overview-filter-item');
     buttons.forEach((btn) => {
@@ -15,7 +15,7 @@ function selectButton(button) {
 }
 
 
-// số lượng sp
+////////////////////////// số lượng sp //////////////////////////
 function changeQuantity(change) {
     let quantityInput = document.getElementById('quantityInput');
     let quantity = parseInt(quantityInput.value);
@@ -27,7 +27,7 @@ function changeQuantity(change) {
 }
 
 
-// btn selection
+////////////////////////// btn selection //////////////////////////
 function selectButton(button) {
     const buttons = document.querySelectorAll('.product-contain-classify-btn');
     buttons.forEach((btn) => {
@@ -37,7 +37,7 @@ function selectButton(button) {
 }
 
 
-// preview image
+////////////////////////// preview image //////////////////////////
 function displayLargeImage(smallImage) {
     const largeImage = document.querySelector('.product-image-preview-top-img');
     largeImage.src = smallImage.src.replace('_tn', ''); // Thay đổi đường dẫn ảnh lớn bằng cách loại bỏ "_tn" từ đường dẫn ảnh nhỏ
@@ -45,7 +45,7 @@ function displayLargeImage(smallImage) {
 }
 
 
-// Lắng nghe sự kiện click trên nút "Thêm vào giỏ hàng"
+////////////////////////// Lắng nghe sự kiện click trên nút "Thêm vào giỏ hàng" //////////////////////////
 document.querySelector('.product-contain-puttocart').addEventListener('click', function() {
     setTimeout(function() {
         showSuccessMessage();

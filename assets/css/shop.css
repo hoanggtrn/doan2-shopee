@@ -674,6 +674,54 @@
     padding-top: 30px;
 }
 
+.contain-header-banner-btn{
+    border: none;
+    background-color: #00000034;
+    width: 35px;
+    height: 60px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 2rem;
+    display: none;
+    z-index: 10;
+}
+
+.slider-container:hover .contain-header-banner-btn{
+    display: block;
+    animation: fadeIn ease-in 0.2s;
+}
+
+.contain-header-banner-btn:hover{
+    background-color: #0000004e;
+}
+
+.contain-header-banner-left-btn-left{
+    left: 0;
+    border-radius: 0 2px 2px 0;
+}
+
+.contain-header-banner-left-btn-right{
+    right: 6px;
+    border-radius: 2px 0 0 2px;
+}
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    padding-right: ;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slider a {
+    flex: 0 0 100%;
+}
+
 .contain-header-banner-img1 {
     width: 796px;  /* 1 */
     height: 235px;

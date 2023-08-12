@@ -4,30 +4,88 @@
     <title>Example</title>
 </head>
 <style>
-    .header-cart-has-cart{
-        display: none;
-    }
+    .slider-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider a {
+    flex: 0 0 100%;
+}
+
+/* Thêm các style khác cho slider và nút tại đây */
+
 </style>
 <body>
-    <!-- Các phần tử trang web -->
-    <div class="header-cart-list">
-        <div class="header-cart-empty">Không có hàng</div>
-        <div class="header-cart-has-cart">Có hàng</div>
+    <div class="slider-container">
+        <div class="slider">
+            <a href="#" class="contain-header-banner-link">
+                <img src="https://cf.shopee.vn/file/vn-50009109-5998c991932336c21bac7672fd585456_xxhdpi" alt="" class="contain-header-banner-img contain-header-banner-img1">
+            </a>
+            <a href="#" class="contain-header-banner-link">
+                <img src="https://cf.shopee.vn/file/vn-50009109-7ac8d2aac28f561f56b628df6f13b8e8_xxhdpi" alt="" class="contain-header-banner-img contain-header-banner-img1">
+            </a>
+            <a href="#" class="contain-header-banner-link">
+                <img src="https://cf.shopee.vn/file/vn-50009109-b336229accb423953ab15f97a4a10fc7_xxhdpi" alt="" class="contain-header-banner-img contain-header-banner-img1">
+            </a>
+            <a href="#" class="contain-header-banner-link">
+                <img src="https://cf.shopee.vn/file/vn-50009109-5f8561704b78ca68ff1f6328e974922f_xxhdpi" alt="" class="contain-header-banner-img contain-header-banner-img1">
+            </a>
+            <a href="#" class="contain-header-banner-link">
+                <img src="https://cf.shopee.vn/file/vn-50009109-5998c991932336c21bac7672fd585456_xxhdpi" alt="" class="contain-header-banner-img contain-header-banner-img1">
+            </a>
+
+            <!-- Thêm hình ảnh khác vào đây -->
+        </div>
+        <button class="contain-header-banner-btn contain-header-banner-left-btn-left" id="prevBtn">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="contain-header-banner-btn contain-header-banner-left-btn-right" id="nextBtn">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
     </div>
-    <button class="product-contain-puttocart-text">Thêm vào giỏ hàng</button>
-
-    <!-- Đoạn mã JavaScript -->
+    
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const addButton = document.querySelector(".product-contain-puttocart-text");
-            const emptyCart = document.querySelector(".header-cart-empty");
-            const hasCart = document.querySelector(".header-cart-has-cart");
+       const slider = document.querySelector('.slider');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const sliderWidth = slider.offsetWidth;
+let currentIndex = 0;
 
-            addButton.addEventListener("click", function() {
-                emptyCart.style.display = "none";
-                hasCart.style.display = "block";
-            });
-        });
+nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    if (currentIndex >= slider.childElementCount) {
+        currentIndex = 0;
+    }
+    updateSliderPosition();
+});
+
+prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = slider.childElementCount - 1;
+    }
+    updateSliderPosition();
+});
+
+function updateSliderPosition() {
+    slider.style.transform = `translateX(-${currentIndex * sliderWidth}px)`;
+}
+
+// Tự động chuyển slide sau một khoảng thời gian
+setInterval(() => {
+    currentIndex++;
+    if (currentIndex >= slider.childElementCount) {
+        currentIndex = 0;
+    }
+    updateSliderPosition();
+}, 5000); // Chuyển slide sau mỗi 5 giây (5000ms)
+
     </script>
 </body>
 </html>

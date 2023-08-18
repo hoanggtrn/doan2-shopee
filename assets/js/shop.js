@@ -1,3 +1,5 @@
+// Author: Trần Nguyễn Khánh Hoàng 
+
 ////////////////////////// history //////////////////////////
 function handleKeyPress(event) {
   if (event.keyCode === 13) {

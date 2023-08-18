@@ -1,3 +1,5 @@
+// Author: Trần Nguyễn Khánh Hoàng 
+
 ////////////////////////// load header và footer //////////////////////////
 $(function() {
     $("#header").load("/base/header.html");

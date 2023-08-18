@@ -22,12 +22,18 @@
 1. Mở file báo cáo bằng Google Doc có thể gây ra sai định dạng, khuyến khích mở bằng WPS hoặc WORD
 
 
------------------ĐỒ ÁN 2-------------------
+------------------------------------ĐỒ ÁN 2------------------------------------
 
 GVHD: Ths. Huỳnh Hoàng Hà
+
 Nhóm sv thực hiện:
+
 	Trần Nguyễn Khánh Hoàng   20119315   20119315@student.hcmute.edu.vn
+
 	Lê Quốc Thái	
+
+-------------------------------------------------------------------------------
+
 
 
 

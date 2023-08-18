@@ -1,6 +1,6 @@
-||-------------------------||
+||-----------------------------||
 ||  !!Đây là hướng dẫn trình tự thực hiện dự án!!  ||
-||-------------------------||
+||-----------------------------||
 
 1. Lên ý tưởng, tìm hiểu về các công cụ hỗ trợ, phần mềm triển khai dự án (Thư mục Document và thư mục Tools và báo cáo chương 2 mục "cơ sở lý thuyết")
 2. Phân tích cấu trúc website sẽ thiết kế (Thư mục BaoCao mục 3.1.1)
@@ -22,7 +22,8 @@
 
 
 -----------------ĐỒ ÁN 2-------------------
-GVHD: 
+
+GVHD: Ths. Huỳnh Hoàng Hà
 Nhóm sv thực hiện:
 	Trần Nguyễn Khánh Hoàng   20119315   20119315@student.hcmute.edu.vn
 	Lê Quốc Thái	

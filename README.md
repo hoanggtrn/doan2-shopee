@@ -2,7 +2,7 @@
 ||  !!Đây là hướng dẫn trình tự thực hiện dự án!!  ||
 ||--------------------------------||
 
-1. Lên ý tưởng, tìm hiểu về các công cụ hỗ trợ, phần mềm triển khai dự án (Thư mục Document và thư mục Tools và báo cáo chương 2 mục "cơ sở lý thuyết")
+1. Lên ý tưởng, tìm hiểu về các công cụ hỗ trợ, phần mềm triển khai dự án (Thư mục Document và thư mục Tools và Thư mục BaoCao với báo cáo chương 2 mục "cơ sở lý thuyết")
 2. Phân tích cấu trúc website sẽ thiết kế (Thư mục BaoCao mục 3.1.1)
 3. Thiết kế các module website dùng chung (header & footer) (Thư mục Code\Shopee-main-page\base)
 4. Thiết kế chi tiết các trang web chính (homepage, shop, product) (Thư mục Code\Shopee-main-page\shop và Code\Shopee-main-page\product)
@@ -11,8 +11,9 @@
 7. Kiểm thử website và các chức năng bằng cách đẩy code lên host online (Netify)
 
 --------[LINK] https://shopee-rep11.netlify.app/index.html [LINK]-------------
+
 8. Vẽ lưu đồ hoạt động của các chức năng (Thư mục Code\Shopee-main-page\Luu do giai thuat)
-9. Viết báo cáo (Thư mục Result\BaoCao)
+9. Viết báo cáo (Thư mục BaoCao)
 10. Quay video sản phẩm (Thư mục Videos)
 
 
